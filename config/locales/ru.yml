@@ -4,6 +4,9 @@ ru:
       header_image:
         one: "Изображение шапки"
         other: "Изображения шапки"
+      section:
+        one: "Описание раздела"
+        other: "Описания разделов"
 
   date:
     abbr_day_names:
