@@ -7,6 +7,24 @@ ru:
       section:
         one: "Описание раздела"
         other: "Описания разделов"
+      planning_image:
+        one: "Изображение планирования"
+        other: "Изображения планирования"
+      components_image:
+        one: "Изображение подбора компонентов"
+        other: "Изображения подбора компонентов"
+      sponsor:
+        one: "Спонсор"
+        other: "Спонсоры"
+      video:
+        one: "Видео"
+        other: "Видео"
+      finished_object:
+        one: "Объект"
+        other: "Объекты"
+      finished_object_image:
+        one: "Изображение объекта"
+        other: "Изображения объектов"
 
   date:
     abbr_day_names:
