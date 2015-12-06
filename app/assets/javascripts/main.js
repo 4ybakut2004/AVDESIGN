@@ -11,6 +11,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		templateUrl: 'static_pages/home',
 		controller: 'HomeController',
 		reloadOnSearch: false
+	}).otherwise({
+		redirectTo: '/'
 	});
 }]);
 
