@@ -11,6 +11,12 @@ class Section < ActiveRecord::Base
   SERVICE = "service"             # Обслуживание
   COOPERATION = "cooperation"     # Сотрудничество
 
+  def self.init_sections
+    Section.init_keys
+    Section.init_names
+    Section.init_orders
+  end
+
   # Первоначальная настройка таблицы
   def self.init_keys
     Section.find_or_create_by(key: PLANNING)
