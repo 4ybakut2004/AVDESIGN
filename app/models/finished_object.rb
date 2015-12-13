@@ -27,4 +27,14 @@ class FinishedObject < ActiveRecord::Base
     _value = "social" if _value == "Общественный объект"
     super(_value)
   end
+
+  # Количество на странице
+  def self.per_page
+    3
+  end
+
+  # Количество страниц
+  def self.pages_count
+    (FinishedObject.all.size.to_f / FinishedObject.per_page.to_f).ceil
+  end
 end

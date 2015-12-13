@@ -1,9 +1,314 @@
-<div>
-  <div>
-    {{page}}
-  </div>
-
-  <input type="button" name="" value="1" ng-click="changePage(1)">
-  <input type="button" name="" value="2" ng-click="changePage(2)">
-  <input type="button" name="" value="3" ng-click="changePage(3)">
+<div class="container">
+	<!-- Шапочка от верха страницы до конца меню-->
+	<div class="header">
+		<img class="logo" src="<%= asset_path("header/head_logo.png") %>"/>
+		<ul class="bxslider">
+			<li><img src="<%= asset_path("banner_1.jpg") %>" /></li>
+			<li><img src="<%= asset_path("banner_2.jpg") %>" /></li>
+			<li><img src="<%= asset_path("banner_3.jpg") %>" /></li>
+		</ul>
+		<div class="menu">
+			<div class="menu_line">
+				<div class="item_menu">
+					<label class="item_menu_label">Проектирование</label>
+					<div class="circle">
+						<div class="item_menu_icon item_menu_1"></div>
+						<div class="halfclip">
+							<div class="halfcircle clipped"></div>
+						</div>
+						<div class="halfcircle fixed"></div>
+					</div>
+				</div>
+				<div class="item_menu">
+					<label class="item_menu_label">Профессиональный подбор компонентов</label>
+					<div class="circle">
+						<div class="item_menu_icon item_menu_2"></div>
+						<div class="halfclip">
+							<div class="halfcircle clipped"></div>
+						</div>
+						<div class="halfcircle fixed"></div>
+					</div>
+				</div>
+				<div class="item_menu">
+					<label class="item_menu_label">Установка и настройка оборудования</label>
+					<div class="circle">
+						<div class="item_menu_icon item_menu_3"></div>
+						<div class="halfclip">
+							<div class="halfcircle clipped"></div>
+						</div>
+						<div class="halfcircle fixed"></div>
+					</div>
+				</div>
+			</div>
+			<div class="menu_line" style="margin-top: -60px;">
+				<div class="item_menu">
+					<label class="item_menu_label">Гарантийное и сервисное обслуживание</label>
+					<div class="circle">
+						<div class="item_menu_icon item_menu_4"></div>
+						<div class="halfclip">
+							<div class="halfcircle clipped"></div>
+						</div>
+						<div class="halfcircle fixed"></div>
+					</div>
+				</div>
+				<div class="item_menu">
+					<label class="item_menu_label">Сотрудничество с оранизациями</label>
+					<div class="circle">
+						<div class="item_menu_icon item_menu_5"></div>
+						<div class="halfclip">
+							<div class="halfcircle clipped"></div>
+						</div>
+						<div class="halfcircle fixed"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Первый раздел - проектирование -->
+	<div>
+		<div class="header_page">
+			<img src="<%= asset_path("head_left.png") %>"/>
+			<h3>Проектирование систем домашнего кинотеатора и стерио аудио систем класса Hi-Fi и High End</h3>
+			<div class="header_logo_with_container">
+				<img src="<%= asset_path("head_right.png") %>"/>
+				<span class="header_page_logo header_page_logo_1"></span>
+			</div>
+		</div>
+		<div class="slider page_content_margin content">
+			<div>
+				<div id="ninja-slider" style="float:left;">
+					<div class="slider-inner">
+						<ul>
+							<li><a class="ns-img" href="<%= asset_path("img1_big.jpg") %>"></a></li>
+							<li><a class="ns-img" href="<%= asset_path("img1_big.jpg") %>"></a></li>
+							<li><a class="ns-img" href="<%= asset_path("img1_big.jpg") %>"></a></li>
+						</ul>
+						<div class="fs-icon" title="Expand/Close"></div>
+					</div>
+				</div>
+				<div id="thumbnail-slider" style="float:left;">
+					<div class="inner">
+						<ul>
+							<li>
+								<a class="thumb" href="<%= asset_path("img1.jpg") %>"></a>
+							</li>
+							<li>
+								<a class="thumb" href="<%= asset_path("img1.jpg") %>"></a>
+							</li>
+							<li>
+								<a class="thumb" href="<%= asset_path("img1.jpg") %>"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+		<div class="description page_content_margin content">
+			<p>Проектирование - важнейший раздел создания любой аудио-видео системы.</p>
+			<p>Ошибки, допущенные на стадии проектирования, могут свести на нет работу всех компонентов системы, даже если они правильно установлены и имеют весьма немалую стоимость.</p>
+			<br/>
+			<p>Только при грамотном взаимодействии с клиентом, и при необходимости с его дизайнером, прорабом и с другим персоналом, который выполняет ремонтно-строительные работы на объекте, можно добиться необходимого результата как в эстетической, так и в технической областях.</p>
+			<br/>
+			<p>Наша компания имеет многолетний опыт работы в проектировании аудио-видео систем различного уровня и комплектации. Мы с удовольствием поможем вам спроектировать систему нужного вам ценового уровня, внешнего вида и других характеристик. В вашем доме будет установлено оборудование известных мировых брэндов отвечающее самым высоким стандартам качества.</p>
+		</div>
+	</div>
+	
+	<!-- Второй раздел - Профессиональный подбор -->
+	<div>
+		<div class="header_page">
+			<img src="<%= asset_path("head_left.png") %>"/>
+			<h3>Профессиональный подбор аудио-видео компонентов от начального до элитного уровня</h3>
+			<div class="header_logo_with_container">
+				<img src="<%= asset_path("head_right.png") %>"/>
+				<span class="header_page_logo header_page_logo_2"></span>
+			</div>
+		</div>
+		<div class="page_content_margin content image_block">
+			<ul class="list_inline img_image_block">
+				<li><img src="<%= asset_path("1_acoustics.jpg") %>"/><label class="separator"></label></li>
+				<li><img src="<%= asset_path("2_Hi-Fi.jpg") %>"/></li>
+				<li><img src="<%= asset_path("3_cables.jpg") %>"/></li>
+				<li><img src="<%= asset_path("4_furniture.jpg") %>"/></li>
+				<li><img src="<%= asset_path("5_attachment.jpg") %>"/></li>
+				<li><img src="<%= asset_path("6_projector.jpg") %>"/></li>
+			</ul>
+			<ul class="list_inline titles_image_block">
+				<li><span>Акустические системы</span></li>
+				<li><span>Hi-Fi, High End Компоненты</span></li>
+				<li><span>Кабели, аксессуары, системы питания</span></li>
+				<li><span>Аудио-Видео мебель</span></li>
+				<li><span>Крепления и аксессуары</span></li>
+				<li><span>Проекционное оборудование</span></li>
+			</ul>
+		</div>
+		<div class="description page_content_margin content">
+			<p>Наша компания имеет доступ к более 100 мировым брендам, лидерам в области Hi-Fi, High-End звука, высококачественного изображения и инновационных технологий. Мы поможем вам подобрать комплект оборудования, максимально удовлетворяющий вашим потребностям и финансовым возможностям.</p>
+		</div>
+	</div>
+	
+	<!-- Раздел большой -->
+	<div>
+		<div class="header_page">
+			<img src="<%= asset_path("head_left.png") %>"/>
+			<h3>Профессиональная установка и настройка оборудования</h3>
+			<div class="header_logo_with_container">
+				<img src="<%= asset_path("head_right.png") %>"/>
+				<span class="header_page_logo header_page_logo_3"></span>
+			</div>
+		</div>
+		
+		<div class="page_content_margin content clear">
+			<ul class="pages_type list_inline page_content_margin">
+				<li>ФОТОГАЛЕРЕЯ</li>
+				<li class="active">ВИДЕОГАЛЕРЕЯ</li>
+			</ul>
+			
+			<ul class="page_gallery page_content_margin list_inline">
+				<li class="gallery_item">
+					<div class="gallery_item_header">
+						<label class="gallery_item_icon gallery_item_apartment"></label>
+						<div class="gallery_item_preview"></div>
+					</div>
+					<span class="gallery_item_title">Заголовок объекта №1</span>
+				</li>
+				
+				<li class="gallery_item">
+					<div class="gallery_item_header">
+						<label class="gallery_item_icon gallery_item_apartment"></label>
+						<div class="gallery_item_preview"></div>
+					</div>
+					<span class="gallery_item_title">Заголовок объекта №2</span>
+				</li>
+				
+				<li class="gallery_item">
+					<div class="gallery_item_header">
+						<label class="gallery_item_icon gallery_item_cottage"></label>
+						<div class="gallery_item_preview"></div>
+					</div>
+					<span class="gallery_item_title">Заголовок объекта №3</span>
+				</li>
+				
+				<li class="gallery_item">
+					<div class="gallery_item_header">
+						<label class="gallery_item_icon gallery_item_cottage"></label>
+						<div class="gallery_item_preview"></div>
+					</div>
+					<span class="gallery_item_title">Заголовок объекта №3</span>
+				</li>
+				
+				<li class="gallery_item">
+					<div class="gallery_item_header">
+						<label class="gallery_item_icon gallery_item_apartment"></label>
+						<div class="gallery_item_preview"></div>
+					</div>
+					<span class="gallery_item_title">Заголовок объекта №1</span>
+				</li>
+				
+				<li class="gallery_item">
+					<div class="gallery_item_header">
+						<label class="gallery_item_icon gallery_item_apartment"></label>
+						<div class="gallery_item_preview"></div>
+					</div>
+					<span class="gallery_item_title">Заголовок объекта №2</span>
+				</li>
+				
+			</ul>
+			
+			<div class="pages_navigation_block">
+				<ul class="pages_navigation list_inline">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="description page_content_margin content">
+			<p>Установка и настройка оборудования - это не менее важный заключительный этап в построении аудио-видео системы. На данном этапе технически нужно воплощать в жизнь то, что было ранее задумано проектировщиком и дизайнером, обеспечить удобство использования, максимально реализовать звуковой потенциал вашей системы, обеспечить долговечность и бесперебойную работу оборудования. Все эти условия могут выполнить только специалисты высокого уровня подготовки с большим опытом работы в данной области. Наша компания уже более 10 лет успешно решает данные задачи, мы непрерывно совершенствуем свои навыки и повышаем качество выполнения работ.</p>
+		</div>
+	</div>
+	
+	<!-- Гарантийное и сервисное обслуживание техники -->
+	<div>
+		<div class="header_page">
+			<img src="<%= asset_path("head_left.png") %>"/>
+			<h3>Гарантийное и сервисное обслуживание техники</h3>
+			<div class="header_logo_with_container">
+				<img src="<%= asset_path("head_right.png") %>"/>
+				<span class="header_page_logo header_page_logo_4"></span>
+			</div>
+		</div>
+		<div class="page_content_margin content service_container">
+			<div class="service_colmn">
+				<div class="service_item">
+					<label class="service_icon"></label>
+					<span class="service_title">Консультации</span>
+				</div>
+				
+				<div class="service_item">
+					<label class="service_icon"></label>
+					<span class="service_title">Cервисное обслуживание</span>
+				</div>
+			</div>
+			<img class="service_colmn" src="<%= asset_path("banner_service.png") %>"/>
+			<div class="service_colmn">
+				<div class="service_item">
+					<label class="service_icon"></label>
+					<span class="service_title">Ремонт</span>
+				</div>
+				
+				<div class="service_item">
+					<label class="service_icon"></label>
+					<span class="service_title">Расходные материалы</span>
+				</div>
+			</div>
+		</div>
+		<div class="description page_content_margin content">
+			<p>После того как ваша система благополучно начала «жить» в вашем доме, к сожалению, не исключены случаи выхода из строя отдельных компонентов. Природа этих неприятностей различна: от скачка напряжения в вашей электросети  до скрытого заводского дефекта, который проявляется позднее. В этой ситуации к вам на помощь должны прийти высококвалифицированные специалисты по ремонту оборудования и в кратчайшие сроки устранить проблему, используя только оригинальные запчасти и качественные материалы. Наша компания предоставляет широкий спектр услуг по гарантийному и постгарантийному обслуживанию техники, осуществляет сервисное обслуживание и поставку расходных материалов (головок звукоснимателей, ламп для проекторов, различных аксессуаров и т.д).</p>
+		</div>
+	</div>
+	
+	<div>
+		<div class="header_page">
+			<img src="<%= asset_path("head_left.png") %>"/>
+			<h3>Сотрудничество с проектными организациями и дизайнерами</h3>
+			<div class="header_logo_with_container">
+				<img src="<%= asset_path("head_right.png") %>"/>
+				<span class="header_page_logo header_page_logo_5"></span>
+			</div>
+		</div>
+		<div class="images page_content_margin">
+			<div></div>
+		</div>
+		<div class="description page_content_margin content">
+			<p>Дизайн интерьера квартиры, коттеджа или офиса является неотъемлемой частью проектирования жизненного пространства современного человека. Любой предмет, будь то люстра, шкаф или акустическая система, должны правильно вписываться в интерьер и не нарушать общей идеи дизайна. Мы получили большой положительный опыт от сотрудничества с проектными организациями, дизайнерскими бюро и частными дизайнерами. Только работая совместно у нас получалось создавать действительно эксклюзивные предложения и оригинальные решения для каждого клиента. Сегодня мы готовы расширять сферу сотрудничества и приглашаем всех, кто участвует в создании и строительстве современного жилья (дизайнеров, прорабов, проектные организации и т.д) для взаимовыгодного сотрудничества.</p>
+		</div>
+	</div>
+</div>
+<div class="footer_red_line">
+	<div class="footer_red_side footer_red_line_left">
+		<img src="<%= asset_path("footer-line_left.png") %>"/>
+	</div>
+	<div class="footer_red_side footer_red_line_center"></div>
+	<div class="footer_red_side footer_red_line_right">
+		<img src="<%= asset_path("footer-line_right.png") %>"/>
+	</div>
+</div>
+<div class="footer_container">
+	<h2>Контактная информация</h2>
+	<div class="footer_info_line">
+		<span class="footer_text dark_gray_text">Тел.</span>
+		<span class="footer_text light_text">+7(383)299-42-43</span>
+	</div>
+	<div class="footer_info_line">
+		<span class="footer_text dark_gray_text">E-mail:</span>
+		<a href="info@av-design.ru" class="footer_text light_text">info@av-design.ru</a>
+	</div>
+	<div class="footer_info_line">
+		<span class="footer_text dark_gray_text">Наш магазин находится по адресу:</span>
+		<span class="footer_text light_text">г. Новосибирск, ул. Ленина, д.55, (метро "Площадь Гарина-Михайловского")</span>
+	</div>
+	
+	<span class="footer-copy dark_gray_text">Все права принадлежат ООО "Аудио-Видео дизайн", 2015г., Новосибирск.</span>
 </div>

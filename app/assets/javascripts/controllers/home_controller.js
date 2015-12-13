@@ -3,6 +3,9 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams) {
 	// Текущая страница
 	$scope.page = $routeParams.page || 1;
 
+	// Завершенные объекты
+	$scope.finishedObjects = [];
+
 	// Меняет страницу на переданную
 	$scope.changePage = function(page) {
 		$location.search({page: page});
