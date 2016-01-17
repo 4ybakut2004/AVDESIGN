@@ -43,4 +43,9 @@ class Section < ActiveRecord::Base
     Section.where(key: SERVICE).first.update_attributes(order: 4)
     Section.where(key: COOPERATION).first.update_attributes(order: 5)
   end
+
+  def self.get_description(key)
+    section = Section.where(key: key).first
+    section.nil? ? "" : (section.description || "")
+  end
 end

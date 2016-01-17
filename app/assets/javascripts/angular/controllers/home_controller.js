@@ -1,5 +1,5 @@
 // Контроллер, управляющий домашней страницей
-function HomeController($rootScope, $scope, $location, $route, $routeParams) {
+function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject) {
 	// Текущая страница
 	$scope.page = $routeParams.page || 1;
 
@@ -18,8 +18,25 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams) {
 
 	// Загружает страницу с данными
 	function loadPage() {
-		console.log($scope.page);
+		FinishedObject.all($scope.page, function(data) {
+			if(data.success) {
+				$scope.finishedObjects = data.data;
+			}
+		}, function(data) {
+			console.log(data);
+		});
 	}
+
+	$scope.categories = {
+		photo: 'photo',
+		video: 'video'
+	}
+
+	$scope.activeCategory = $scope.categories.photo;
+
+	$scope.changeCategory = function(category) {
+		$scope.activeCategory = category;
+	};
 
 	//$scope.$on('$routeUpdate', function (angularEvent, current) {});
 }

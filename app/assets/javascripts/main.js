@@ -1,5 +1,5 @@
 // Создаем AngularJs приложение с указанным в разметке именем
-var app = angular.module('App', ['ngRoute']);
+var app = angular.module('App', ['ngRoute', 'ngResource']);
 
 // Настройка приложения (Роутинг и т.д.)
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -17,10 +17,13 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 	});
 }]);
 
+// Серисы
+app.factory('FinishedObject', ['$resource', FinishedObjectService]);
+
 // Задействуем контроллер, управляющий приложением
 app.controller(
 	'HomeController',
-	['$rootScope', '$scope', '$location', '$route', '$routeParams', HomeController]
+	['$rootScope', '$scope', '$location', '$route', '$routeParams', 'FinishedObject', HomeController]
 );
 
 // Задействуем директивы

@@ -5,7 +5,7 @@ class FinishedObject < ActiveRecord::Base
 
   accepts_nested_attributes_for :finished_object_images, :allow_destroy => true
 
-  has_attached_file :preview, :styles => { :medium => "500x500>", :thumb => "100x100>" }, :default_url => "/static_images/no_photo.png"
+  has_attached_file :preview, :styles => { :medium => "500x500>", :preview => "400x150>" }, :default_url => "/static_images/no_photo.png"
   validates_attachment_content_type :preview, :content_type => /\Aimage\/.*\Z/
   validates_attachment :preview, :presence => true
 
@@ -13,6 +13,8 @@ class FinishedObject < ActiveRecord::Base
   enum object_type: [:flat, :cottage, :social]
 
   validates :object_type, presence: true
+
+  PER_PAGE = 6.0
 
   # Необходим в админке для поля ввода
   def object_type_enum
@@ -28,13 +30,8 @@ class FinishedObject < ActiveRecord::Base
     super(_value)
   end
 
-  # Количество на странице
-  def self.per_page
-    3
-  end
-
   # Количество страниц
   def self.pages_count
-    (FinishedObject.all.size.to_f / FinishedObject.per_page.to_f).ceil
+    (FinishedObject.all.size.to_f / PER_PAGE).ceil
   end
 end
