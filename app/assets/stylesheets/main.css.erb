@@ -462,6 +462,7 @@ h3{
 .pages_type li.active{
 	border-top: 2px solid #f20000;
 	border-bottom: 0px solid #f20000;
+	color: #f20000;
 	
 }
 
@@ -471,16 +472,13 @@ h3{
 
 .service_icon{
 	margin-bottom: 30px;
-	display: block;
-	width: 155px;
-	height: 155px;
-	background: #242424;
 }
 
 .service_title{
 	color: #ffffff;
 	font-family: CuprumRegular, sans-serif;
     font-size: 22px;
+    text-transform: uppercase;
 }
 
 .service_colmn{
@@ -567,4 +565,141 @@ h3{
     font-size: 18px;
 	padding: 40px 0 20px 0;
     display: block;
+}
+
+
+.floating_navigation{
+    position: fixed;
+    background: rgba(26, 26, 26, 0.9);
+    height: 85px;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.floating_navigation_container{
+    display: table;
+}
+
+.floating_navigation_logo{
+    display: table-cell;
+}
+
+.floating_menu, .floating_infomation{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.floating_menu{
+    padding-left: 100px;
+}
+
+.floating_infomation{
+    padding: 0 45px;
+    text-align: right;
+}
+
+.item_icon_floating_menu{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    margin: 14px;
+    background: url(' <%= asset_path("sprite_menu.png") %>') no-repeat;
+}
+
+.border_item_floating_menu{
+    margin: 0 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #ffffff ;
+    position: relative;
+}
+
+.item_icon_floating_menu_1{
+    background-position: 0 0;
+}
+
+.item_icon_floating_menu_2{
+    background-position: -45px 0;
+}
+
+.item_icon_floating_menu_3{
+    background-position: -90px 0;
+}
+
+.item_icon_floating_menu_4{
+    background-position: -135px 0;
+}
+
+.item_icon_floating_menu_5{
+    background-position: -180px 0;
+}
+
+.circle_floating_menu:hover .item_icon_floating_menu_1, .item_icon_floating_menu_1.active{
+    background-position: 0 -45px;
+}
+
+.circle_floating_menu:hover .item_icon_floating_menu_2, .item_icon_floating_menu_2.active{
+    background-position: -45px -45px;
+}
+
+.circle_floating_menu:hover  .item_icon_floating_menu_3, .item_icon_floating_menu_3.active{
+    background-position: -90px -45px;
+}
+
+.circle_floating_menu:hover  .item_icon_floating_menu_4, .item_icon_floating_menu_4.active{
+    background-position: -135px -45px;
+}
+
+.circle_floating_menu:hover  .item_icon_floating_menu_5, .item_icon_floating_menu_5.active{
+    background-position: -180px -45px;
+}
+
+.floating_infomation_phone{
+    color: #ffffff ;
+    font-size: 22px;
+    font-family: CuprumBold, sans-serif;
+}
+
+.floating_infomation_address{
+    color: #ffffff ;
+    font-size: 20px;
+    font-family: CuprumRegular, sans-serif;
+}
+
+.circle_floating_menu{
+    cursor: pointer;
+    position: absolute;
+    width: 74px;
+   height: 74px;
+   top: 50%;
+   margin-top: -37px;
+   left: 50%;
+   margin-left: -37px;
+}
+
+.circle_floating_menu:hover .halfclip {
+   animation: cliprotate 2s 1;
+   transform: rotate(180deg);
+}
+
+.circle_floating_menu:hover .clipped {
+   transform: rotate(135deg);
+   animation: rotate 1s linear 2;
+}
+
+.circle_floating_menu:hover .fixed {
+   opacity: 1;
+   animation: showfixed 2s 1;
+}
+
+.circle_floating_menu .halfclip, .circle_floating_menu .halfcircle{
+    top: 0px;
+}
+
+.circle_floating_menu .halfcircle{
+    border: solid 2px transparent;
+    border-top-color: #ff0000 ;
+   border-left-color: #ff0000 ;
 }

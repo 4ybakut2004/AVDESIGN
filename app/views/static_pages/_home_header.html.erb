@@ -6,9 +6,9 @@
 		<li><img src="<%= asset_path("banner_2.jpg") %>" /></li>
 		<li><img src="<%= asset_path("banner_3.jpg") %>" /></li>
 	</ul>
-	<div class="menu">
+	<div class="menu" ng-navigation menu-item-selector=".item_menu">
 		<div class="menu_line">
-			<div class="item_menu">
+			<a class="item_menu" href="#planning">
 				<label class="item_menu_label">Проектирование</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_1"></div>
@@ -17,8 +17,8 @@
 					</div>
 					<div class="halfcircle fixed"></div>
 				</div>
-			</div>
-			<div class="item_menu">
+			</a>
+			<a class="item_menu" href="#components">
 				<label class="item_menu_label">Профессиональный подбор компонентов</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_2"></div>
@@ -27,8 +27,8 @@
 					</div>
 					<div class="halfcircle fixed"></div>
 				</div>
-			</div>
-			<div class="item_menu">
+			</a>
+			<a class="item_menu" href="#installation">
 				<label class="item_menu_label">Установка и настройка оборудования</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_3"></div>
@@ -37,10 +37,10 @@
 					</div>
 					<div class="halfcircle fixed"></div>
 				</div>
-			</div>
+			</a>
 		</div>
 		<div class="menu_line" style="margin-top: -60px;">
-			<div class="item_menu">
+			<a class="item_menu" href="#service">
 				<label class="item_menu_label">Гарантийное и сервисное обслуживание</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_4"></div>
@@ -49,8 +49,8 @@
 					</div>
 					<div class="halfcircle fixed"></div>
 				</div>
-			</div>
-			<div class="item_menu">
+			</a>
+			<a class="item_menu" href="#cooperation">
 				<label class="item_menu_label">Сотрудничество с оранизациями</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_5"></div>
@@ -59,7 +59,7 @@
 					</div>
 					<div class="halfcircle fixed"></div>
 				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>

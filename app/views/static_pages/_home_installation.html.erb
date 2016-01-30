@@ -1,5 +1,5 @@
 <!-- Раздел большой -->
-<div>
+<div id="installation">
 	<div class="header_page">
 		<img src="<%= asset_path("head_left.png") %>"/>
 		<h3>Профессиональная установка и настройка оборудования</h3>
@@ -25,8 +25,11 @@
 			</li>
 		</ul>
 
-		<ul class="page_gallery page_content_margin list_inline" ng-show="activeCategory == categories.photo">
-			<li class="gallery_item" ng-repeat="finishedObject in finishedObjects">
+		<ul class="page_gallery page_content_margin list_inline"
+		    ng-show="activeCategory == categories.photo">
+			<li class="gallery_item"
+			    ng-repeat="finishedObject in finishedObjects"
+			    ng-click="openDialog(finishedObject)">
 				<div class="gallery_item_header">
 					<label class="gallery_item_icon"
 						   ng-class="{'gallery_item_apartment': finishedObject.object_type == 'flat', 'gallery_item_cottage': finishedObject.object_type == 'cottage'}"></label>

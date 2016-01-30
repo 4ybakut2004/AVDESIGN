@@ -10,6 +10,7 @@ class Api::V1::FinishedObjectsController < ApplicationController
         .get_page(params[:page] || 1, params[:count] || 6)
         .collect do |o|
           info = {
+            id: o.id,
             name: o.name,
             object_type: o.object_type,
             short_description: o.short_description,

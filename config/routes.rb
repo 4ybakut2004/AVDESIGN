@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # Пути к статическим страничкам
   get 'static_pages/home'
+  get 'static_pages/home_dialog'
 
   namespace :api do
     namespace :v1 do

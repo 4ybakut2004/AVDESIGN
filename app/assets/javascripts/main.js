@@ -1,5 +1,5 @@
 // Создаем AngularJs приложение с указанным в разметке именем
-var app = angular.module('App', ['ngRoute', 'ngResource']);
+var app = angular.module('App', ['ngRoute', 'ngResource', 'ngDialog']);
 
 // Настройка приложения (Роутинг и т.д.)
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -23,10 +23,11 @@ app.factory('FinishedObject', ['$resource', FinishedObjectService]);
 // Задействуем контроллер, управляющий приложением
 app.controller(
 	'HomeController',
-	['$rootScope', '$scope', '$location', '$route', '$routeParams', 'FinishedObject', HomeController]
+	['$rootScope', '$scope', '$location', '$route', '$routeParams', 'FinishedObject', 'ngDialog', HomeController]
 );
 
 // Задействуем директивы
 app.directive('ngBxslider', ['$compile', NgBxslider]);
 app.directive('ngThumbnailSlider', ['$compile', NgThumbnailSlider]);
 app.directive('ngNinjaSlider', ['$compile', NgNinjaSlider]);
+app.directive('ngNavigation', ['$compile', NgNavigation]);
