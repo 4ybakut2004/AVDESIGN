@@ -1,5 +1,5 @@
 // Контроллер, управляющий домашней страницей
-function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject, ngDialog) {
+function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject, ngDialog, $anchorScroll) {
 	// Номер текущей страницы фотогалереи
 	$scope.page = $routeParams.page || 1;
 
@@ -35,6 +35,12 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 			}
 		}
 	});
+
+	$scope.updateSectionParams = function(section) {
+		$scope.$apply(function() {
+			$location.search('section', section);
+		});
+	}
 
 	// Меняет страницу на переданную. Слушатель ссылки поймает это и загрузит новую страницу
 	$scope.changePage = function(page) {
@@ -107,6 +113,14 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 			$location.search('detail_id', undefined);
 		});
 	});
+
+	//$anchorScroll.yOffset = 100;
+	//$anchorScroll();
+
+	//$scope.gotoSection = function(section) {
+	//	$location.hash(section);
+	//	$anchorScroll();
+	//};
 
 	// Первоначальная загрузка
 	loadPage();

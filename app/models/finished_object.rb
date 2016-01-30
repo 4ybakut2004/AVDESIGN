@@ -5,7 +5,7 @@ class FinishedObject < ActiveRecord::Base
 
   accepts_nested_attributes_for :finished_object_images, :allow_destroy => true
 
-  has_attached_file :preview, :styles => { :medium => "500x500>", :preview => "400x150>" }, :default_url => "/static_images/no_photo.png"
+  has_attached_file :preview, :styles => { :medium => "500x500>", :preview => "400x150#" }, :default_url => "/static_images/no_photo.png"
   validates_attachment_content_type :preview, :content_type => /\Aimage\/.*\Z/
   validates_attachment :preview, :presence => true
 

@@ -23,7 +23,7 @@ app.factory('FinishedObject', ['$resource', FinishedObjectService]);
 // Задействуем контроллер, управляющий приложением
 app.controller(
 	'HomeController',
-	['$rootScope', '$scope', '$location', '$route', '$routeParams', 'FinishedObject', 'ngDialog', HomeController]
+	['$rootScope', '$scope', '$location', '$route', '$routeParams', 'FinishedObject', 'ngDialog', '$anchorScroll', HomeController]
 );
 
 // Задействуем директивы
