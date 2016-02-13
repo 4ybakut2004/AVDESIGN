@@ -9,36 +9,25 @@
 		</div>
 	</div>
 	<div class="slider page_content_margin content">
-		<div>
-			<div id="ninja-slider" ng-ninja-slider style="float:left;">
-				<div class="slider-inner">
-					<ul>
-						<li><a class="ns-img" href="<%= asset_path("img1_big.jpg") %>"></a></li>
-						<li><a class="ns-img" href="<%= asset_path("img1_big.jpg") %>"></a></li>
-						<li><a class="ns-img" href="<%= asset_path("img1_big.jpg") %>"></a></li>
-					</ul>
-					<div class="fs-icon" title="Expand/Close"></div>
-				</div>
-			</div>
-			<div id="thumbnail-slider" ng-thumbnail-slider style="float:left;">
-				<div class="inner">
-					<ul>
-						<li>
-							<a class="thumb" href="<%= asset_path("img1.jpg") %>"></a>
-						</li>
-						<li>
-							<a class="thumb" href="<%= asset_path("img1.jpg") %>"></a>
-						</li>
-						<li>
-							<a class="thumb" href="<%= asset_path("img1.jpg") %>"></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both;"></div>
-		</div>
+		<ul ng-gallery-slider>
+			<li data-thumb="<%= asset_path("img1.jpg") %>">
+				<img src="<%= asset_path("img1_big.jpg") %>" />
+			</li>
+			<li data-thumb="<%= asset_path("img1.jpg") %>">
+				<img src="<%= asset_path("img1_big.jpg") %>" />
+			</li>
+			<li data-thumb="<%= asset_path("img1.jpg") %>">
+				<img src="<%= asset_path("img1_big.jpg") %>" />
+			</li>
+			<li data-thumb="<%= asset_path("img1.jpg") %>">
+				<img src="<%= asset_path("img1_big.jpg") %>" />
+			</li>
+			<li data-thumb="<%= asset_path("img1.jpg") %>">
+				<img src="<%= asset_path("img1_big.jpg") %>" />
+			</li>
+		</ul>
 	</div>
 	<div class="description page_content_margin content">
-		<p><%= Section.get_description(Section::PLANNING).html_safe %></p>
+		<%= Section.get_description(Section::PLANNING).html_safe %>
 	</div>
 </div>

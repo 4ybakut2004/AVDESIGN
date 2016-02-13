@@ -1,1 +1,17 @@
-<p>Привет!! Я диалоговое окно!</p>
+<div class="dialog_content">
+
+	<ul id="dialog-slider">
+		<li ng-repeat="image in objectInfo.finished_object_images"
+			data-thumb="{{image.thumb}}">
+			<img width="600px" src="{{image.image}}" />
+		</li>
+	</ul>
+
+	<h4>{{objectInfo.name}}</h4>
+
+	<hr class="separator">
+
+	<div class="dialot_text">
+		<div ng-bind-html="objectInfo.description"></div>
+	</div>
+</div>

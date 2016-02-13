@@ -40,17 +40,28 @@ body{
     margin: 20px auto;
 }
 
-div.bx-viewport{
-	width: inherit !important;
-	position: inherit !important;
-	height: 316px;
-    background: #000000;
+.simple-slider{
     margin: 15px 80px;
 }
 
 .menu{
 	display: table;
 	margin: 25px auto;
+}
+
+.slider_with_vertical_preview .lSAction > a{
+	width: 60px;
+	height: 45px;
+	background: url('<%= asset_path("up-down.png") %>') repeat;
+	background-color: #000000;
+}
+
+.slider_with_vertical_preview.vertical .lSAction > .lSPrev{
+	background-position: 0 0;
+}
+
+.slider_with_vertical_preview.vertical .lSAction > .lSNext{
+	background-position: 0 -45px;
 }
 
 .menu_line{
@@ -381,6 +392,7 @@ h3{
 	float: left;
 	width: 500px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .page_gallery li:nth-child(2n){
@@ -701,5 +713,64 @@ h3{
 .circle_floating_menu .halfcircle{
     border: solid 2px transparent;
     border-top-color: #ff0000 ;
-   border-left-color: #ff0000 ;
+    border-left-color: #ff0000 ;
+}
+
+.dialog_content{
+	width: 600px;
+}
+
+.dialog_content h4{
+	font-family: CuprumBold, sans-serif;
+	font-size: 22px;
+	color: #333333;
+	text-align: center;
+}
+
+.separator{
+	border: none; /* Убираем границу для браузера Firefox */
+    color: #333333; /* Цвет линии для остальных браузеров */
+    background-color: #333333; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
+    margin: 15px 0;
+}
+
+.dialot_text p{
+	line-height: 1.2;
+	text-align: justify;
+	color: #333333;
+    font-size: 16px;
+    font-family: CuprumRegular, sans-serif;
+}
+
+.simple-slider .lSPager.lSpg{
+	margin-top: -40px !important;
+    padding-bottom: 20px;
+}
+
+.simple-slider .lSPager.lSpg > li:hover a, 
+.simple-slider .lSPager.lSpg > li.active a{
+	background-color: #ffffff;
+}
+
+.simple-slider .lSPager.lSpg > li a{
+	background-color: #cccccc;
+}
+
+.simple-slider .lSPager.lSpg > li{
+	padding: 0 8px;
+}
+
+.dialog_slider{
+	margin-bottom: 15px;
+}
+
+.dialog_slider .lSPager.lSGallery li{
+	opacity: 0.7;
+}
+
+.dialog_slider .lSPager.lSGallery li.active, 
+.dialog_slider .lSPager.lSGallery li:hover{
+	opacity: 1;
+	border-radius: 0;
 }

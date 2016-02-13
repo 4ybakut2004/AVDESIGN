@@ -32,8 +32,7 @@ RailsAdmin.config do |config|
         read_only true
       end
 
-      field :description, :wysihtml5 do
-        config_options toolbar: { fa: true, html: false, link: false, image: false }
+      field :description, :ck_editor do
         label "Описание"
       end
     end
@@ -343,7 +342,7 @@ RailsAdmin.config do |config|
         label "Краткое описание"
       end
 
-      field :description do
+      field :description, :ck_editor do
         label "Полное описание"
       end
 

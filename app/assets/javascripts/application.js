@@ -13,8 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.bxslider.min.js
-//= require ninja-slider.js
-//= require thumbnail-slider.js
+//= require light-gallery
+//= require lightslider.js
+//= require ckeditor/init
+//= require ckeditor/lang/ru
+//= require ckeditor/config
 //= require angular/angular.min.js
 //= require angular/angular-route.min.js
 //= require angular/angular-resource.min.js

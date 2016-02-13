@@ -22,12 +22,16 @@ app.factory('FinishedObject', ['$resource', FinishedObjectService]);
 
 // Задействуем контроллер, управляющий приложением
 app.controller(
-	'HomeController',
-	['$rootScope', '$scope', '$location', '$route', '$routeParams', 'FinishedObject', 'ngDialog', '$anchorScroll', HomeController]
+	'HomeController', [
+		'$rootScope', '$scope', '$location',
+		'$route', '$routeParams', 'FinishedObject',
+		'ngDialog', '$anchorScroll', '$timeout', '$sce', HomeController
+	]
 );
 
 // Задействуем директивы
 app.directive('ngBxslider', ['$compile', NgBxslider]);
-app.directive('ngThumbnailSlider', ['$compile', NgThumbnailSlider]);
-app.directive('ngNinjaSlider', ['$compile', NgNinjaSlider]);
+app.directive('ngSimpleSlider', ['$compile', NgSimpleSlider]);
+app.directive('ngGallerySlider', ['$compile', NgGallerySlider]);
 app.directive('ngNavigation', ['$compile', NgNavigation]);
+app.directive('ngDialogSlider', ['$compile', NgDialogSlider]);

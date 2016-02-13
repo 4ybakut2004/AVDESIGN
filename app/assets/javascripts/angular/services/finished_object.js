@@ -7,5 +7,9 @@ function FinishedObjectService($resource) {
         return this.service.query({ page: page }, onSuccessCallback, onErrorCallback);
     };
 
+    FinishedObject.prototype.get = function(id, onSuccessCallback, onErrorCallback) {
+        return this.service.get({ id: id }, onSuccessCallback, onErrorCallback);
+    };
+
     return new FinishedObject();
 }

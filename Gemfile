@@ -35,7 +35,9 @@ gem 'foreman', '0.63.0'
 gem 'rails_admin', '0.6.8'
 gem 'paperclip', '~> 4.3'
 
-gem 'bootstrap-wysihtml5-rails', '0.3.2.100'
+gem 'ckeditor'
+
+gem 'light_gallery_rails', git: 'https://github.com/stNicolaas/light-gallery-rails.git' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,5 +1,5 @@
 // Контроллер, управляющий домашней страницей
-function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject, ngDialog, $anchorScroll) {
+function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject, ngDialog, $anchorScroll, $timeout, $sce) {
 	// Номер текущей страницы фотогалереи
 	$scope.page = $routeParams.page || 1;
 
@@ -31,7 +31,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 				closeDialog();
 			} else {
 				// Если в адресной строке есть диалог, нужно его открыть
-				openDialog();
+				loadObjectInfoAndOpenDialog();
 			}
 		}
 	});
@@ -102,8 +102,21 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 			ngDialog.open({
 				template: 'static_pages/home_dialog',
 				className: 'ngdialog-theme-default',
-				data: $scope.ngDialogData
+				data: $scope.ngDialogData,
+				scope: $scope
 			});
+		}
+	}
+
+	function loadObjectInfoAndOpenDialog() {
+		if($scope.detailId != undefined) {
+			FinishedObject.get($scope.detailId, function(data) {
+				data.data.description = $sce.trustAsHtml(data.data.description);
+				$scope.objectInfo = data.data;
+				openDialog();
+			}, function(data) {
+				console.log(data);
+			})
 		}
 	}
 
@@ -111,8 +124,31 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 	$rootScope.$on('ngDialog.closed', function (e, $dialog) {
 		$scope.$apply(function() {
 			$location.search('detail_id', undefined);
+			$scope.objectInfo = undefined;
 		});
 	});
+
+	$rootScope.$on('ngDialog.opened', function (e, $dialog) {
+		$scope.$apply(function() {
+			$timeout(function() {
+				$('#dialog-slider').lightSlider({
+					addClass: "dialog_slider",
+					adaptiveHeight: true,
+					gallery:true,
+					item:1,
+					loop:true,
+					thumbItem:12,
+					slideMargin:0,
+					enableDrag: false,
+					currentPagerPosition:'left'
+				});
+			});
+		});
+	});
+
+	$scope.trust = function(text) {
+		return text;
+	}
 
 	//$anchorScroll.yOffset = 100;
 	//$anchorScroll();
@@ -126,5 +162,5 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 	loadPage();
 
 	// Открыть диалог, если он указан
-	openDialog();
+	loadObjectInfoAndOpenDialog();
 }
