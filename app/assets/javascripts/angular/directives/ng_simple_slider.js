@@ -3,7 +3,7 @@ function NgSimpleSlider($compile) {
     return {
         link: function($scope, element, attrs) {
             $(element).lightSlider({
-                adaptiveHeight:true,
+                autoWidth: true,
                 item:1,
                 slideMargin:0,
                 loop:true,

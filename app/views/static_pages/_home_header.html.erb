@@ -2,9 +2,9 @@
 <div class="header">
 	<img class="logo" src="<%= asset_path("header/head_logo.png") %>"/>
 	<ul ng-simple-slider>
-		<li><img src="<%= asset_path("banner_1.jpg") %>" /></li>
-		<li><img src="<%= asset_path("banner_2.jpg") %>" /></li>
-		<li><img src="<%= asset_path("banner_3.jpg") %>" /></li>
+		<% HeaderImage.all.each do |image| %>
+			<li><img src="<%= image.image.url(:medium) %>" /></li>
+		<% end %>
 	</ul>
 	<div class="menu" ng-navigation menu-item-selector=".item_menu">
 		<div class="menu_line">

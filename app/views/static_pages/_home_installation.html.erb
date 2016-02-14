@@ -18,10 +18,15 @@
 		</ul>
 
 		<ul class="page_gallery page_content_margin list_inline" ng-show="activeCategory == categories.video">
-			<li class="gallery_item">
-				<div class="gallery_item_header">
+			<li class="gallery_item"
+				ng-repeat="video in videos">
+				<div class="gallery_item_header" >
+					<label class="gallery_item_icon"></label>
+					<div class="gallery_item_preview">
+						<iframe width="400" height="150" src="{{video.src}}" frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
-				<span class="gallery_item_title">ВИДЕО</span>
+				<span class="gallery_item_title">{{video.name}}</span>
 			</li>
 		</ul>
 
@@ -41,10 +46,18 @@
 			</li>
 		</ul>
 		
-		<div class="pages_navigation_block">
+		<div class="pages_navigation_block" ng-show="activeCategory == categories.photo">
 			<ul class="pages_navigation list_inline">
 				<% FinishedObject.pages_count.to_i.times do |i| %>
 					<li><a ng-class="{'active': page == <%= i + 1 %>}" href="" ng-click="changePage(<%= i + 1 %>)"><%= i + 1 %></a></li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="pages_navigation_block" ng-show="activeCategory == categories.video">
+			<ul class="pages_navigation list_inline">
+				<% Video.pages_count.to_i.times do |i| %>
+					<li><a ng-class="{'active': videoPage == <%= i + 1 %>}" href="" ng-click="changeVideoPage(<%= i + 1 %>)"><%= i + 1 %></a></li>
 				<% end %>
 			</ul>
 		</div>

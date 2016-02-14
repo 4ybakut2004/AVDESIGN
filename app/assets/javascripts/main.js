@@ -19,13 +19,15 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 // Серисы
 app.factory('FinishedObject', ['$resource', FinishedObjectService]);
+app.factory('Video', ['$resource', VideoService]);
 
 // Задействуем контроллер, управляющий приложением
 app.controller(
 	'HomeController', [
 		'$rootScope', '$scope', '$location',
 		'$route', '$routeParams', 'FinishedObject',
-		'ngDialog', '$anchorScroll', '$timeout', '$sce', HomeController
+		'ngDialog', '$anchorScroll', '$timeout', '$sce',
+		'Video', HomeController
 	]
 );
 

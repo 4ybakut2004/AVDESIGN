@@ -198,10 +198,14 @@ RailsAdmin.config do |config|
     weight 6
 
     list do
-      include_fields :link
+      include_fields :link, :name
 
       field :link do
-        label "Ссылка"
+        label "ID"
+      end
+
+      field :name do
+        label "Название"
       end
     end
 
@@ -209,7 +213,11 @@ RailsAdmin.config do |config|
       include_fields :link
 
       field :link do
-        label "Ссылка"
+        label "ID"
+      end
+
+      field :name do
+        label "Название"
       end
     end
 
@@ -217,7 +225,11 @@ RailsAdmin.config do |config|
       include_fields :link
 
       field :link do
-        label "Ссылка"
+        label "ID"
+      end
+
+      field :name do
+        label "Название"
       end
     end
   end

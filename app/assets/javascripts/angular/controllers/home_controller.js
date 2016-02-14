@@ -1,13 +1,16 @@
 // Контроллер, управляющий домашней страницей
-function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject, ngDialog, $anchorScroll, $timeout, $sce) {
+function HomeController($rootScope, $scope, $location, $route, $routeParams, FinishedObject, ngDialog, $anchorScroll, $timeout, $sce, Video) {
 	// Номер текущей страницы фотогалереи
 	$scope.page = $routeParams.page || 1;
+	$scope.videoPage = $routeParams.video_page || 1;
 
 	// Кеш страниц фотогалереи
 	$scope.audioPages = {};
+	$scope.videoPages = {};
 
 	// Отображаемые данные фотогалереи (текущая страница)
 	$scope.finishedObjects = [];
+	$scope.videos = [];
 
 	// Id отображаемого в модальном окне объекта
 	$scope.detailId = $routeParams.detail_id;
@@ -17,10 +20,16 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 	// Реагирование на изменение параметров в ссылке
 	$scope.$on('$routeUpdate', function(event, current) { 
 		var page = current.params.page || 1;
+		var videoPage = current.params.video_page || 1;
 
 		if($scope.page != page) {
 			$scope.page = page;
 			loadPage();
+		}
+
+		if($scope.videoPage != videoPage) {
+			$scope.videoPage = videoPage;
+			loadVideoPage();
 		}
 
 		var detailId = current.params.detail_id;
@@ -50,6 +59,12 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 		}
 	}
 
+	$scope.changeVideoPage = function(page) {
+		if(!$scope.videoLoading) {
+			$location.search('video_page', page);
+		}
+	}
+
 	// Загружает страницу с данными
 	function loadPage() {
 		$scope.audioLoading = true;                   // Запоминаем, что идет загрузка
@@ -69,6 +84,30 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 			// Сразу отображаем, если есть в кеше
 			$scope.finishedObjects = existed;
 			$scope.audioLoading = false;
+		}
+	}
+
+	function loadVideoPage() {
+		$scope.videLoading = true;                   // Запоминаем, что идет загрузка
+		var existed = $scope.videoPages[$scope.videoPage]; // Ищем данные в кеше
+		if(existed === undefined) {
+			// Если в кеше нет, нужно загрузить с сервера
+			Video.all($scope.videoPage, function(data) {
+				if(data.success) {
+					angular.forEach(data.data, function(video) {
+						video.src = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + video.link);
+					});
+					$scope.videoPages[$scope.videoPage] = data.data; // Кешируем
+					$scope.videos = data.data;         // Отображаем
+					$scope.videoLoading = false;
+				}
+			}, function(data) {
+				console.log(data);
+			});
+		} else {
+			// Сразу отображаем, если есть в кеше
+			$scope.videos = existed;
+			$scope.videoLoading = false;
 		}
 	}
 
@@ -140,7 +179,12 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 					thumbItem:12,
 					slideMargin:0,
 					enableDrag: false,
-					currentPagerPosition:'left'
+					currentPagerPosition:'left',
+					onSliderLoad: function(el) {
+						el.lightGallery({
+							selector: '#dialog-slider .lslide'
+						});
+					} 
 				});
 			});
 		});
@@ -160,6 +204,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 
 	// Первоначальная загрузка
 	loadPage();
+	loadVideoPage();
 
 	// Открыть диалог, если он указан
 	loadObjectInfoAndOpenDialog();
