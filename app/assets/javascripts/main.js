@@ -36,4 +36,5 @@ app.directive('ngBxslider', ['$compile', NgBxslider]);
 app.directive('ngSimpleSlider', ['$compile', NgSimpleSlider]);
 app.directive('ngGallerySlider', ['$compile', NgGallerySlider]);
 app.directive('ngNavigation', ['$compile', NgNavigation]);
+app.directive('ngSimpleNavigation', ['$compile', NgSimpleNavigation]);
 app.directive('ngDialogSlider', ['$compile', NgDialogSlider]);
