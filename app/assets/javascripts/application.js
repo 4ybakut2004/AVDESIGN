@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.bxslider.min.js
+//= require jquery.carouselTicker.min
 //= require light-gallery
 //= require lightslider.js
 //= require ckeditor/init

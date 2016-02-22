@@ -1,0 +1,9 @@
+<div class="carouselTicker">
+  <ul class="carouselTicker__list">
+    <% Sponsor.all.each do |sponsor| %>
+    <li class="carouselTicker__item">
+        <img src="<%= sponsor.image.url %>">
+    </li>
+    <% end %>
+  </ul>
+</div>

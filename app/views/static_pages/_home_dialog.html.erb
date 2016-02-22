@@ -2,7 +2,8 @@
 
 	<ul id="dialog-slider">
 		<li ng-repeat="image in objectInfo.finished_object_images"
-			data-thumb="{{image.thumb}}">
+			data-thumb="{{image.thumb}}"
+			data-src="{{image.image}}">
 			<img width="600px" src="{{image.image}}" />
 		</li>
 	</ul>

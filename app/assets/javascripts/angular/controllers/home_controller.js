@@ -190,6 +190,17 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 		});
 	});
 
+	function initSponsors() {
+		$(".carouselTicker").carouselTicker({
+			// animation speed
+			speed: 1,
+			// animation delay
+			delay: 30,
+			// RTL or LTR
+			reverse: false
+		});
+	}
+
 	$scope.trust = function(text) {
 		return text;
 	}
@@ -208,4 +219,6 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 
 	// Открыть диалог, если он указан
 	loadObjectInfoAndOpenDialog();
+
+	initSponsors();
 }
