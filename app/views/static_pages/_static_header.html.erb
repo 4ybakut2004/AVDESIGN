@@ -1,0 +1,81 @@
+<!-- Плавающая менюшка -->
+<div class="static_navigation">
+    <div class="page_content_margin content floating_navigation_container">
+        <div class="floating_block_logo">
+            <a id="floating_logo" href="/">
+                <img class="floating_navigation_logo" src="<%= asset_path('logo.png') %>"/>
+            </a>
+        </div>
+
+        <ul class="floating_menu list_inline">
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/#planning">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_1"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/#components">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_2"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/#installation">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_3"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/#service">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_4"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/#cooperation">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_5"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/videos">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_6 <%= 'active' if section == 'videos' %>"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+            <li class="border_item_floating_menu">
+                <a class="circle_floating_menu" href="/articles">
+                    <div class="item_icon_floating_menu item_icon_floating_menu_7 <%= 'active' if section == 'articles' %>"></div>
+                    <div class="halfclip">
+                        <div class="halfcircle clipped"></div>
+                    </div>
+                    <div class="halfcircle fixed"></div>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="floating_infomation">
+            <span class="floating_infomation_phone">+7 (383) 299-42-33</span><br/>
+            <span class="floating_infomation_address">Новосибирск, ул. Ленина, 55</span>
+        </div>
+    </div>
+</div>

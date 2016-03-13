@@ -4,6 +4,10 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 	$scope.page = $routeParams.page || 1;
 	$scope.videoPage = $routeParams.video_page || 1;
 
+	$scope.audioLoading = true;
+	$scope.videoLoading = true;
+	$scope.needsScrollAfterLoading = false;
+
 	// Кеш страниц фотогалереи
 	$scope.audioPages = {};
 	$scope.videoPages = {};
@@ -76,6 +80,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 					$scope.audioPages[$scope.page] = data.data; // Кешируем
 					$scope.finishedObjects = data.data;         // Отображаем
 					$scope.audioLoading = false;
+					$scope.scrollIfNeedsAndNotLoading();
 				}
 			}, function(data) {
 				console.log(data);
@@ -84,6 +89,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 			// Сразу отображаем, если есть в кеше
 			$scope.finishedObjects = existed;
 			$scope.audioLoading = false;
+			$scope.scrollIfNeedsAndNotLoading();
 		}
 	}
 
@@ -100,6 +106,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 					$scope.videoPages[$scope.videoPage] = data.data; // Кешируем
 					$scope.videos = data.data;         // Отображаем
 					$scope.videoLoading = false;
+					$scope.scrollIfNeedsAndNotLoading();
 				}
 			}, function(data) {
 				console.log(data);
@@ -108,6 +115,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 			// Сразу отображаем, если есть в кеше
 			$scope.videos = existed;
 			$scope.videoLoading = false;
+			$scope.scrollIfNeedsAndNotLoading();
 		}
 	}
 
@@ -208,8 +216,19 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 	$anchorScroll.yOffset = 100;
 
 	$scope.anchorScroll = function() {
-		$anchorScroll();
+		if($scope.videoLoading || $scope.audioLoading) {
+			$scope.needsScrollAfterLoading = true;
+		} else {
+			$anchorScroll();
+		}
 	};
+
+	$scope.scrollIfNeedsAndNotLoading = function() {
+		if(!$scope.videoLoading && !$scope.audioLoading && $scope.needsScrollAfterLoading) {
+			$anchorScroll();
+			$scope.needsScrollAfterLoading = false;
+		}
+	}
 
 	$scope.setHash = function(section) {
 		$location.hash(section);
