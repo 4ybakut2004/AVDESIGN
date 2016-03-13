@@ -55,7 +55,7 @@
 
 		<div class="pages_navigation_block" ng-show="activeCategory == categories.video">
 			<ul class="pages_navigation list_inline">
-				<% Video.pages_count.to_i.times do |i| %>
+				<% Video.installation_pages_count.to_i.times do |i| %>
 					<li><a ng-class="{'active': videoPage == <%= i + 1 %>}" href="" ng-click="changeVideoPage(<%= i + 1 %>)"><%= i + 1 %></a></li>
 				<% end %>
 			</ul>

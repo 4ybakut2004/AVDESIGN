@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require jquery.bxslider.min.js
 //= require jquery.carouselTicker.min
 //= require light-gallery

@@ -4,9 +4,9 @@ var app = angular.module('App', ['ngRoute', 'ngResource', 'ngDialog']);
 // Настройка приложения (Роутинг и т.д.)
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode({
-		enabled: true,
-		requireBase: false
+		enabled: true
 	});
+	$locationProvider.hashPrefix('!');
 
 	$routeProvider.when('/',{
 		templateUrl: 'static_pages/home',
@@ -19,7 +19,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 // Серисы
 app.factory('FinishedObject', ['$resource', FinishedObjectService]);
-app.factory('Video', ['$resource', VideoService]);
+app.factory('Video', ['$resource', '$http', VideoService]);
 
 // Задействуем контроллер, управляющий приложением
 app.controller(
@@ -30,6 +30,7 @@ app.controller(
 		'Video', HomeController
 	]
 );
+app.controller('StaticVideosController', ['$scope', StaticVideosController]);
 
 // Задействуем директивы
 app.directive('ngBxslider', ['$compile', NgBxslider]);

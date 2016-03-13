@@ -10,21 +10,11 @@
 	</div>
 	<div class="slider page_content_margin content">
 		<ul ng-gallery-slider>
-			<li data-thumb="<%= asset_path("img1.jpg") %>">
-				<img src="<%= asset_path("img1_big.jpg") %>" />
-			</li>
-			<li data-thumb="<%= asset_path("img1.jpg") %>">
-				<img src="<%= asset_path("img1_big.jpg") %>" />
-			</li>
-			<li data-thumb="<%= asset_path("img1.jpg") %>">
-				<img src="<%= asset_path("img1_big.jpg") %>" />
-			</li>
-			<li data-thumb="<%= asset_path("img1.jpg") %>">
-				<img src="<%= asset_path("img1_big.jpg") %>" />
-			</li>
-			<li data-thumb="<%= asset_path("img1.jpg") %>">
-				<img src="<%= asset_path("img1_big.jpg") %>" />
-			</li>
+			<% PlanningImage.all.each do |image| %>
+				<li data-thumb="<%= image.image.url(:thumb) %>">
+					<img src="<%= image.image.url(:medium) %>" />
+				</li>
+			<% end %>
 		</ul>
 	</div>
 	<div class="description page_content_margin content">

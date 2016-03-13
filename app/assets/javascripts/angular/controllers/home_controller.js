@@ -92,7 +92,7 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 		var existed = $scope.videoPages[$scope.videoPage]; // Ищем данные в кеше
 		if(existed === undefined) {
 			// Если в кеше нет, нужно загрузить с сервера
-			Video.all($scope.videoPage, function(data) {
+			Video.installation_videos($scope.videoPage, function(data) {
 				if(data.success) {
 					angular.forEach(data.data, function(video) {
 						video.src = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + video.link);
@@ -205,13 +205,15 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 		return text;
 	}
 
-	//$anchorScroll.yOffset = 100;
-	//$anchorScroll();
+	$anchorScroll.yOffset = 100;
+	/*$timeout(function() {
+		console.log(1233);
+		$anchorScroll();
+	});*/
 
-	//$scope.gotoSection = function(section) {
-	//	$location.hash(section);
-	//	$anchorScroll();
-	//};
+	$scope.setHash = function(section) {
+		$location.hash(section);
+	};
 
 	// Первоначальная загрузка
 	loadPage();

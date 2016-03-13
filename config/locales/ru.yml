@@ -3,16 +3,16 @@ ru:
     models:
       header_image:
         one: "Изображение шапки"
-        other: "Изображения шапки"
+        other: "Шапка"
       section:
         one: "Описание раздела"
         other: "Описания разделов"
       planning_image:
         one: "Изображение проектирования"
-        other: "Изображения проектирования"
+        other: "Проектирование"
       components_image:
         one: "Изображение подбора компонентов"
-        other: "Изображения подбора компонентов"
+        other: "Подбор компонентов"
       sponsor:
         one: "Спонсор"
         other: "Спонсоры"
@@ -25,6 +25,9 @@ ru:
       finished_object_image:
         one: "Изображение объекта"
         other: "Изображения объектов"
+      article:
+        one: "Статья"
+        other: "Статьи"
 
   date:
     abbr_day_names:

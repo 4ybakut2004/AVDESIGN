@@ -5,16 +5,34 @@ class Api::V1::VideosController < ApplicationController
   #respond_to :json
 
   def index
-    simple_json_response("FinishedObjects") do
-      Video.get_page(params[:page] || 1, params[:count] || 6)
+    simple_json_response("Videos") do
+      Video.get_page(params[:page] || 1, params[:count] || Video::PER_PAGE)
         .order("created_at DESC")
-        .collect do |v|
-          info = {
-            id: v.id,
-            link: v.link,
-            name: v.name
-          }
-        end
+        .collect { |v| v.info }
+    end
+  end
+
+  def installation_videos
+    simple_json_response("Videos") do
+      Video.installation.get_page(params[:page] || 1, params[:count] || Video::PER_PAGE)
+        .order("created_at DESC")
+        .collect { |v| v.info }
+    end
+  end
+
+  def tutorial_videos
+    simple_json_response("Videos") do
+      Video.tutorial.get_page(params[:page] || 1, params[:count] || Video::PER_PAGE)
+        .order("created_at DESC")
+        .collect { |v| v.info }
+    end
+  end
+
+  def overview_videos
+    simple_json_response("Videos") do
+      Video.overview.get_page(params[:page] || 1, params[:count] || Video::PER_PAGE)
+        .order("created_at DESC")
+        .collect { |v| v.info }
     end
   end
 

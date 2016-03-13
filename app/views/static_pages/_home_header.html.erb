@@ -1,14 +1,14 @@
 <!-- Шапочка от верха страницы до конца меню-->
 <div id="header" class="header">
 	<img class="logo" src="<%= asset_path("header/head_logo.png") %>"/>
-	<ul ng-simple-slider>
+	<ul ng-simple-slider style="height: 312px">
 		<% HeaderImage.all.each do |image| %>
 			<li><img src="<%= image.image.url(:medium) %>" /></li>
 		<% end %>
 	</ul>
-	<div class="menu" ng-navigation menu-item-selector=".item_menu">
+	<div class="menu" ng-navigation menu-item-selector=".navigation_item">
 		<div class="menu_line">
-			<a class="item_menu" href="#planning">
+			<a class="item_menu navigation_item" href="#planning">
 				<label class="item_menu_label">Проектирование</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_1"></div>
@@ -18,7 +18,7 @@
 					<div class="halfcircle fixed"></div>
 				</div>
 			</a>
-			<a class="item_menu" href="#components">
+			<a class="item_menu navigation_item" href="#components">
 				<label class="item_menu_label">Профессиональный подбор компонентов</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_2"></div>
@@ -28,7 +28,7 @@
 					<div class="halfcircle fixed"></div>
 				</div>
 			</a>
-			<a class="item_menu" href="#installation">
+			<a class="item_menu navigation_item" href="#installation">
 				<label class="item_menu_label">Установка и настройка оборудования</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_3"></div>
@@ -38,7 +38,7 @@
 					<div class="halfcircle fixed"></div>
 				</div>
 			</a>
-			<a class="item_menu" href="#service">
+			<a class="item_menu navigation_item" href="#service">
 				<label class="item_menu_label">Гарантийное и сервисное обслуживание</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_4"></div>
@@ -50,7 +50,7 @@
 			</a>
 		</div>
 		<div class="menu_line" style="margin-top: -60px;">
-			<a class="item_menu" href="#cooperation">
+			<a class="item_menu navigation_item" href="#cooperation">
 				<label class="item_menu_label">Сотрудничество с оранизациями</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_5"></div>
@@ -60,7 +60,7 @@
 					<div class="halfcircle fixed"></div>
 				</div>
 			</a>
-			<a class="item_menu" href="#cooperation">
+			<a class="item_menu" ng-href="/videos" target="_self">
 				<label class="item_menu_label">Полезные видеоматериалы</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_6"></div>
@@ -70,7 +70,7 @@
 					<div class="halfcircle fixed"></div>
 				</div>
 			</a>
-			<a class="item_menu" href="#cooperation">
+			<a class="item_menu" ng-href="/articles" target="_self">
 				<label class="item_menu_label">Полезные статьи</label>
 				<div class="circle">
 					<div class="item_menu_icon item_menu_7"></div>

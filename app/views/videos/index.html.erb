@@ -1,0 +1,47 @@
+<div>
+	<div class="page_content_margin content clear">
+		<ul class="pages_type list_inline page_content_margin">
+			<li class="<%= 'active' if @video_type == 'tutorial' %>">
+				<a href="/videos?video_type=tutorial">
+					ИНСТРУКЦИИ
+				</a>
+			</li>
+			<li class="<%= 'active' if @video_type == 'overview' %>">
+				<a href="/videos?video_type=overview">
+					ОБЗОРЫ
+				</a>
+			</li>
+		</ul>
+
+		<ul class="page_gallery page_content_margin list_inline">
+			<% @videos.each do |video| %>
+			<li class="gallery_item">
+				<div class="gallery_item_header" >
+					<div class="gallery_item_preview page_content_margin">
+						<iframe width="400"
+								height="150"
+								src="https://www.youtube.com/embed/<%= video.link %>"
+								frameborder="0"
+								allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+				<span class="gallery_item_title"><%= video.name %></span>
+			</li>
+			<% end %>
+		</ul>
+
+		<div class="pages_navigation_block">
+			<ul class="pages_navigation list_inline">
+				<% @pages_count.to_i.times do |i| %>
+					<li>
+						<a class="<%= 'active' if @page == i + 1 %>"
+						   href="/videos?video_type=<%= @video_type %>&page=<%= i + 1 %>">
+							<%= i + 1 %>
+						</a>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

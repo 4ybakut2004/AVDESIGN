@@ -32,7 +32,7 @@ gem 'unicorn'
 # Upstars scripts
 gem 'foreman', '0.63.0'
 
-gem 'rails_admin', '0.6.8'
+gem 'rails_admin', '0.8.1'
 gem 'paperclip', '~> 4.3'
 
 gem 'ckeditor'

@@ -2,7 +2,7 @@ RailsAdmin.config do |config|
   config.main_app_name = ["Audio Video"]
 
   config.included_models = ["Section", "HeaderImage", "PlanningImage", "ComponentsImage",
-    "Sponsor", "Video", "FinishedObject", "FinishedObjectImage"]
+    "Sponsor", "Video", "FinishedObject", "FinishedObjectImage", "Article"]
 
   config.model "Section" do
     object_label_method do
@@ -115,6 +115,10 @@ RailsAdmin.config do |config|
   end
 
   config.model "ComponentsImage" do
+    visible do
+      false
+    end
+
     object_label_method do
       :id
     end
@@ -198,7 +202,7 @@ RailsAdmin.config do |config|
     weight 6
 
     list do
-      include_fields :link, :name
+      include_fields :link, :name, :video_type
 
       field :link do
         label "ID"
@@ -206,11 +210,27 @@ RailsAdmin.config do |config|
 
       field :name do
         label "Название"
+      end
+
+      field :video_type do
+        label "Тип видео"
+        pretty_value do
+          video_types = Video.video_types
+          if value == video_types[:installation]
+            Video::INSTALLATION
+          elsif value == video_types[:tutorial]
+            Video::TUTORIAL
+          elsif value == video_types[:overview]
+            Video::OVERVIEW
+          else
+            value
+          end
+        end
       end
     end
 
     show do
-      include_fields :link
+      include_fields :link, :name, :video_type
 
       field :link do
         label "ID"
@@ -218,11 +238,27 @@ RailsAdmin.config do |config|
 
       field :name do
         label "Название"
+      end
+
+      field :video_type do
+        label "Тип видео"
+        pretty_value do
+          video_types = Video.video_types
+          if value == video_types[:installation]
+            Video::INSTALLATION
+          elsif value == video_types[:tutorial]
+            Video::TUTORIAL
+          elsif value == video_types[:overview]
+            Video::OVERVIEW
+          else
+            value
+          end
+        end
       end
     end
 
     edit do
-      include_fields :link
+      include_fields :link, :name, :video_type
 
       field :link do
         label "ID"
@@ -230,6 +266,22 @@ RailsAdmin.config do |config|
 
       field :name do
         label "Название"
+      end
+
+      field :video_type do
+        label "Тип видео"
+        formatted_value do
+          video_types = Video.video_types
+          if value == video_types[:installation]
+            Video::INSTALLATION
+          elsif value == video_types[:tutorial]
+            Video::TUTORIAL
+          elsif value == video_types[:overview]
+            Video::OVERVIEW
+          else
+            value
+          end
+        end
       end
     end
   end
@@ -393,6 +445,50 @@ RailsAdmin.config do |config|
 
       field :image do
         label "Изображение"
+      end
+    end
+  end
+
+  config.model "Article" do
+    object_label_method do
+      :title
+    end
+
+    weight 8
+
+    list do
+      include_fields :title, :text
+
+      field :title do
+        label "Заголовок"
+      end
+
+      field :text do
+        label "Текст"
+      end
+    end
+
+    show do
+      include_fields :title, :text
+
+      field :title do
+        label "Заголовок"
+      end
+
+      field :text do
+        label "Текст"
+      end
+    end
+
+    edit do
+      include_fields :title, :text
+
+      field :title do
+        label "Заголовок"
+      end
+
+      field :text, :ck_editor do
+        label "Текст"
       end
     end
   end

@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/home_dialog'
 
+  resources :videos, only: [:index]
+  resources :articles, only: [:index, :show]
+
   namespace :api do
     namespace :v1 do
+      get 'installation_videos' => 'videos#installation_videos', :as => 'installation_videos'
+
       resources :finished_objects, only: [:index, :show]
       resources :videos, only: [:index]
       resources :media_library_images, only: [:create]

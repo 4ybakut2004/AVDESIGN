@@ -8,11 +8,11 @@ function NgNavigation($compile) {
 			var currentSection = undefined;
 
 			element.find(menuItemSelector).on('click', function() {
-				//var hash = this.hash;
+				var hash = this.hash;
 				$('html, body').animate({scrollTop: $(this.hash).offset().top - 100}, 1000, function() {
-					//$scope.$apply(function() {
-					//	$scope.gotoSection(hash.substr(1, hash.length));
-					//})
+					$scope.$apply(function() {
+						$scope.setHash(hash.substr(1, hash.length));
+					})
 				});
 				return false;
 			});
