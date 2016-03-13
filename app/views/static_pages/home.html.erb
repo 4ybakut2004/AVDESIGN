@@ -1,5 +1,5 @@
 <%= render 'static_pages/home_floating_menu' %>
-<div class="container">
+<div class="container" ng-after-render="anchorScroll">
 	<%= render 'static_pages/home_header' %>
 	<%= render 'static_pages/home_planning' %>
 	<%= render 'static_pages/home_components' %>

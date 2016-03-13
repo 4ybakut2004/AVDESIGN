@@ -39,3 +39,4 @@ app.directive('ngGallerySlider', ['$compile', NgGallerySlider]);
 app.directive('ngNavigation', ['$compile', NgNavigation]);
 app.directive('ngSimpleNavigation', ['$compile', NgSimpleNavigation]);
 app.directive('ngDialogSlider', ['$compile', NgDialogSlider]);
+app.directive('ngAfterRender', ['$compile', '$timeout', NgAfterRender]);

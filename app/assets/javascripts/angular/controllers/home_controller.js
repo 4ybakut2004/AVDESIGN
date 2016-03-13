@@ -206,10 +206,10 @@ function HomeController($rootScope, $scope, $location, $route, $routeParams, Fin
 	}
 
 	$anchorScroll.yOffset = 100;
-	/*$timeout(function() {
-		console.log(1233);
+
+	$scope.anchorScroll = function() {
 		$anchorScroll();
-	});*/
+	};
 
 	$scope.setHash = function(section) {
 		$location.hash(section);
