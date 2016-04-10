@@ -1,21 +1,30 @@
 <%= render partial: 'static_pages/static_header', locals: { section: 'articles' } %>
 
+<div class="headers page_content_margin">
+	<div class="headers_img headers_img_articles"></div>
+	<div class="headers_arrow page_content_margin">
+		<div class="header_icon header_icon_articles"></div>
+		<h3 class="headers_info headers_text">Информация</h3>
+		<h3 class="headers_video headers_text">Подборка статей</h3>
+	</div>
+</div>
+
 <div>
 	<div class="page_content_margin content clear">
 		<ul class="page_gallery page_content_margin list_inline">
 			<% @articles.each do |article| %>
-			<li class="gallery_item">
-				<a href="/articles/<%= article.id %>" class="gallery_item_header" >
-					<div class="gallery_item_preview page_content_margin">
-						<%= article.title %>
-					</div>
-				</a >
-				<span>&nbsp</span>
+			<li class="gallery_item articles_item_margin">
+				<div class="articles_item gallery_item_header">
+					<a href="/articles/<%= article.id %>" class="gallery_item_title" >
+					<%= article.title %></a >
+				</div>
 			</li>
 			<% end %>
 		</ul>
 
-		<div class="pages_navigation_block">
+		<div class="pages_navigation_block articles_navigation">
+			
+		</article>">
 			<ul class="pages_navigation list_inline">
 				<% @pages_count.to_i.times do |i| %>
 					<li>

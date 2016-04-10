@@ -12,9 +12,9 @@
 	<div class="page_content_margin content clear">
 		<ul class="pages_type list_inline page_content_margin">
 			<li ng-class="{'active': activeCategory == categories.photo}"
-				ng-click="changeCategory(categories.photo)">ФОТОГАЛЕРЕЯ</li>
+				ng-click="changeCategory(categories.photo)"><a>ФОТОГАЛЕРЕЯ</a></li>
 			<li ng-class="{'active': activeCategory == categories.video}"
-				ng-click="changeCategory(categories.video)">ВИДЕОГАЛЕРЕЯ</li>
+				ng-click="changeCategory(categories.video)"><a>ВИДЕОГАЛЕРЕЯ</a></li>
 		</ul>
 
 		<ul class="page_gallery page_content_margin list_inline" ng-show="activeCategory == categories.video">

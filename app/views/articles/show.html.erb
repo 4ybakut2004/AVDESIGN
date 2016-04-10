@@ -1,1 +1,16 @@
-<%= @article.text.html_safe %>
+<%= render partial: 'static_pages/static_header', locals: { section: 'articles' } %>
+
+<div class="headers page_content_margin">
+	<div class="headers_img headers_img_articles"></div>
+	<div class="headers_arrow page_content_margin">
+		<div class="header_icon header_icon_articles"></div>
+		<h3 class="headers_info headers_text">Информация</h3>
+		<h3 class="headers_video headers_text">Подборка статей</h3>
+	</div>
+</div>
+
+<div class="page_content_margin articles_show">
+	<h1><%= @article.title %></h1>
+	<hr class="separator">
+	<%= @article.text.html_safe %>
+</div>
