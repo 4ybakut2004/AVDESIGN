@@ -22,4 +22,3 @@
 /config/deploy.rb
 /public/system/
 /public/static_images/
-Gemfile.lock
