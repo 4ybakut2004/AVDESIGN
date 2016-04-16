@@ -1,4 +1,4 @@
-class VideosController < ApplicationController
+class VideosController < WebController
 
   layout 'static_application'
 

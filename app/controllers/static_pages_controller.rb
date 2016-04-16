@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController
+class StaticPagesController < WebController
 
   def index
     render "layouts/application"

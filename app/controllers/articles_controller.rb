@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class ArticlesController < WebController
 
   layout 'static_application'
 
