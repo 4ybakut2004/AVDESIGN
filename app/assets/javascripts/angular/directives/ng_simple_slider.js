@@ -2,6 +2,9 @@
 function NgSimpleSlider($compile) {
     return {
         link: function($scope, element, attrs) {
+            $(element).find('img').css('width', $(element).width() + 1);
+            $(element).removeClass('simple-slider');
+
             $(element).lightSlider({
                 autoWidth: true,
                 item:1,
@@ -13,15 +16,9 @@ function NgSimpleSlider($compile) {
                 addClass: 'simple-slider'
             });
 
-            setImagesWidth();
-
             $(window).resize(function() {
-              setImagesWidth();
+              $(element).find('img').css('width', $(element).closest('.lSSlideWrapper').width());
             });
-
-            function setImagesWidth() {
-                $(element).find('img').css('width', $(element).closest('.lSSlideWrapper').width());
-            }
         }
     };
 }

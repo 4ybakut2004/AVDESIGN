@@ -1,7 +1,7 @@
 <!-- Шапочка от верха страницы до конца меню-->
 <div id="header" class="header">
 	<img class="logo" src="<%= asset_path("header/head_logo.png") %>"/>
-	<ul ng-simple-slider>
+	<ul ng-simple-slider class="simple-slider">
 		<% HeaderImage.all.each do |image| %>
 			<li><img src="<%= image.image.url(:medium) %>"/></li>
 		<% end %>
