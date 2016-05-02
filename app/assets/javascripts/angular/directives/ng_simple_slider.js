@@ -12,6 +12,16 @@ function NgSimpleSlider($compile) {
                 controls: false,
                 addClass: 'simple-slider'
             });
+
+            setImagesWidth();
+
+            $(window).resize(function() {
+              setImagesWidth();
+            });
+
+            function setImagesWidth() {
+                $(element).find('img').css('width', $(element).closest('.lSSlideWrapper').width());
+            }
         }
     };
 }
