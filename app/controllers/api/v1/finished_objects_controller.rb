@@ -28,7 +28,7 @@ class Api::V1::FinishedObjectsController < ApplicationController
         id: o.id,
         name: o.name,
         description: o.description,
-        finished_object_images: o.finished_object_images.order("created_at DESC").collect do |oi|
+        finished_object_images: o.finished_object_images.order("created_at ASC").collect do |oi|
           oi_info = {
             id: oi.id,
             thumb: oi.image.url(:thumb),

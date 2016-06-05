@@ -301,7 +301,7 @@ RailsAdmin.config do |config|
     weight 7
 
     list do
-      include_fields :name, :object_type, :short_description, :preview
+      include_fields :name, :object_type, :preview
 
       field :name do
         label "Название"
@@ -321,10 +321,6 @@ RailsAdmin.config do |config|
             value
           end
         end
-      end
-
-      field :short_description do
-        label "Краткое описание"
       end
 
       field :preview do
@@ -333,7 +329,7 @@ RailsAdmin.config do |config|
     end
 
     show do
-      include_fields :name, :object_type, :preview, :short_description, :description, :finished_object_images
+      include_fields :name, :object_type, :preview, :description, :finished_object_images
 
       field :name do
         label "Название"
@@ -357,10 +353,6 @@ RailsAdmin.config do |config|
 
       field :preview do
         label "Главное изображение"
-      end
-
-      field :short_description do
-        label "Краткое описание"
       end
 
       field :description do
@@ -383,7 +375,7 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      include_fields :name, :object_type, :short_description, :description, :preview, :finished_object_images
+      include_fields :name, :object_type, :description, :preview, :finished_object_images
 
       field :name do
         label "Название"
@@ -407,10 +399,6 @@ RailsAdmin.config do |config|
 
       field :preview do
         label "Главное изображение"
-      end
-
-      field :short_description do
-        label "Краткое описание"
       end
 
       field :description, :ck_editor do
